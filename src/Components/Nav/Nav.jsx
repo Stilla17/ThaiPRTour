@@ -100,7 +100,7 @@ const Nav = () => {
                             <input className='px-[20px] py-[12px] focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border-[1px] rounded-[15px]' type="text" placeholder='Пароль' />
                             <button className='w-full mt-[15px] rounded-[15px] py-[9px] px-[18px] bg-[#FE8505] text-white  '>Войти</button>
                             <p className='text-[18px] mt-[15px] text-blue-500 '>Забыли пароль?</p>
-                            <button className='rounded-[8px] py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border-[1px] w-full mt-[20px]'>Загистрироваться</button>
+                            <button className='rounded-[8px] py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border-1 w-full mt-[20px]'>Загистрироваться</button>
 
                         </div>
                     ) : ""

@@ -22,7 +22,7 @@ function Section() {
     </motion.div>
   );
 
-  useEffect(() => {
+  const motionVariants = () => {
     animate(0, 20, {
       duration: 1.5,
       ease: 'easeOut',
@@ -30,9 +30,7 @@ function Section() {
         numberRef.current.textContent = Math.round(value) + '+';
       },
     });
-  }, []);
 
-  useEffect(() => {
     animate(0, 100, {
       duration: 1.5,
       ease: 'easeOut',
@@ -40,9 +38,7 @@ function Section() {
         numberRef1.current.textContent = Math.round(value) + '+';
       },
     });
-  }, []);
 
-  useEffect(() => {
     animate(0, 400, {
       duration: 1.5,
       ease: 'easeOut',
@@ -50,9 +46,7 @@ function Section() {
         numberRef2.current.textContent = Math.round(value) + '+';
       },
     });
-  }, []);
 
-  useEffect(() => {
     animate(0, 12, {
       duration: 1.5,
       ease: 'easeOut',
@@ -60,7 +54,13 @@ function Section() {
         numberRef3.current.textContent = Math.round(value) + '+';
       },
     });
+  }
+
+  useEffect(() => {
+    motionVariants();
   }, []);
+
+
 
   return (
     <>

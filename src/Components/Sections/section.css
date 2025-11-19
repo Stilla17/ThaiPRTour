@@ -1,11 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
 .countener {
   max-width: 1500px;
   margin: auto;
@@ -71,6 +63,7 @@
   margin-top: 30px;
   min-height: 150px;
 }
+
 @media (max-width: 1024px) {
   .fle {
     gap: 25px;
@@ -118,6 +111,6 @@
   .aas {
     gap: 8px;
 
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
   }
 }
