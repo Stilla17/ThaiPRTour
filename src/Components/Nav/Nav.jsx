@@ -108,47 +108,19 @@ const Nav = () => {
 
             </div>
             <div className='flex justify-center gap-[100px] p-[15px] bg-[#F7F4F0]'>
-                <ul>
-                    <li className='font-bold'>Гражданство</li>
-                    <li className=''><Link to='/grajdanstvo'>Гражданство</Link></li>
-                    <li className=''><Link to='/rezidestvo'>Резиденство</Link></li>
-                    <li className=''><Link to='/biznes'>Бизнес</Link></li>
-                    <li className=''><Link to='/vizi'>Визы</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Недвижимость</li>
-                    <li className=''><Link to='/buy'>Купить</Link></li>
-                    <li className=''><Link to='/remove'>Снять</Link></li>
-                    <li className=''><Link to='/commercial'>Коммерческая</Link></li>
-                    <li className=''><Link to='/help'>Юридическая помощь</Link></li>
-                    <li className=''><Link to='/helpObject'>Предложить объект</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Индекс паспорта</li>
-                    <li className=''><Link to='/rating'>Рейтинг паспортов</Link></li>
-                    <li className=''><Link to='/countries'>Безвизовые страны</Link></li>
-                    <li className=''><Link to='/viza'>Виза</Link></li>
-                    <li className=''><Link to='/comparison'>Сравнение</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Авто</li>
-                    <li className=''><Link to='/sell\buy'>Купить / продать</Link></li>
-                    <li className=''><Link to='/sell\buy'>Купить / продать</Link></li>
-                    <li className=''><Link to='/arend'>Аренда</Link></li>
-                    <li className=''><Link to='/Cooperation'>Сотрудничество</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Консъерж - сервис</li>
-                    <li className=''><Link to='/arendYaxt'>Аренда яхт</Link></li>
-                    <li className=''><Link to='/arendHelicopter'>Аренда вертолета</Link></li>
-                    <li className=''><Link to='/arendVip'>Аренда vip авто</Link></li>
-                    <li className=''><Link to='/'>24/7 обслуживание гостей</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Медиа</li>
-                    <li className=''><Link to='/news'>Новости</Link></li>
-                    <li className=''><Link to='/blog'>Блог</Link></li>
-                </ul>
+                {
+                    main.map((item, index) => (
+                        <ul key={index}>
+                            <li className='font-bold'>{item.title}</li>
+                            {
+                                item.links.map((link, linkIndex) => (
+                                    <li key={linkIndex} className=''><Link to='/'>{link}</Link></li>
+                                ))
+                            }
+                        </ul>
+                    ))
+                }
+
             </div>
         </nav>
     )
