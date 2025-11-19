@@ -10,6 +10,35 @@ import VkImg from './../../assets/Component 11 (4).png';
 import TgImg from './../../assets/Component 11 (1).png';
 import FbImg from './../../assets/Component 11 (2).png';
 import GoogleImg from './../../assets/Component 11 (3).png';
+
+
+let main = [
+    {
+        title: 'Гражданство',
+        links: ['Гражданство', 'Резиденство', 'Бизнес', 'Визы']
+    },
+    {
+        title: 'Недвижимость',
+        links: ['Купить', 'Снять', 'Коммерческая', 'Юридическая помощь', 'Предложить объект']
+    },
+    {
+        title: 'Индекс паспорта',
+        links: ['Рейтинг паспортов', 'Безвизовые страны', 'Виза', 'Сравнение']
+    },
+    {
+        title: 'Авто',
+        links: ['Купить / продать', 'Купить / продать', 'Аренда', 'Сотрудничество']
+    },
+    {
+        title: 'Консъерж - сервис',
+        links: ['Аренда яхт', 'Аренда вертолета', 'Аренда vip авто', '24/7 обслуживание гостей']
+    },
+    {
+        title: 'Медиа',
+        links: ['Новости', 'Блог']
+    }
+]
+
 const Nav = () => {
 
     const [open, setOpen] = useState(false);
@@ -22,9 +51,9 @@ const Nav = () => {
     }
     return (
         <nav >
-                <div className='flex justify-between items-center border-[1px] p-[20px] border-[#D9D9D9]'>
+            <div className='flex justify-between items-center border p-5 border-[#D9D9D9]'>
                 <img src={Logo} alt="" />
-                <div className='flex items-center gap-[40px]'>
+                <div className='flex items-center gap-10'>
                     <button className='flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-[20px] p-[12px]'><img src={BtnImg} alt="" />Услуги</button>
                     <div className='relative'>
                         <input type="text" className='w-[353px] py-[10px] border-[#C9C9C9] shadow border px-[10px] rounded-[10px]' placeholder='Поиск..' />
@@ -100,7 +129,7 @@ const Nav = () => {
                     <li className=''><Link to='/countries'>Безвизовые страны</Link></li>
                     <li className=''><Link to='/viza'>Виза</Link></li>
                     <li className=''><Link to='/comparison'>Сравнение</Link></li>
-                </ul>https://github.com/Stilla17/ThaiPRTour.git
+                </ul>
                 <ul>
                     <li className='font-bold'>Авто</li>
                     <li className=''><Link to='/sell\buy'>Купить / продать</Link></li>
