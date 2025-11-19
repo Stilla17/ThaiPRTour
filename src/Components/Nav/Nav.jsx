@@ -10,6 +10,35 @@ import VkImg from './../../assets/Component 11 (4).png';
 import TgImg from './../../assets/Component 11 (1).png';
 import FbImg from './../../assets/Component 11 (2).png';
 import GoogleImg from './../../assets/Component 11 (3).png';
+
+
+let main = [
+    {
+        title: 'Гражданство',
+        links: ['Гражданство', 'Резиденство', 'Бизнес', 'Визы']
+    },
+    {
+        title: 'Недвижимость',
+        links: ['Купить', 'Снять', 'Коммерческая', 'Юридическая помощь', 'Предложить объект']
+    },
+    {
+        title: 'Индекс паспорта',
+        links: ['Рейтинг паспортов', 'Безвизовые страны', 'Виза', 'Сравнение']
+    },
+    {
+        title: 'Авто',
+        links: ['Купить / продать', 'Купить / продать', 'Аренда', 'Сотрудничество']
+    },
+    {
+        title: 'Консъерж - сервис',
+        links: ['Аренда яхт', 'Аренда вертолета', 'Аренда vip авто', '24/7 обслуживание гостей']
+    },
+    {
+        title: 'Медиа',
+        links: ['Новости', 'Блог']
+    }
+]
+
 const Nav = () => {
 
     const [open, setOpen] = useState(false);
@@ -22,9 +51,9 @@ const Nav = () => {
     }
     return (
         <nav >
-                <div className='flex justify-between items-center border-[1px] p-[20px] border-[#D9D9D9]'>
+            <div className='flex justify-between items-center border p-5 border-[#D9D9D9]'>
                 <img src={Logo} alt="" />
-                <div className='flex items-center gap-[40px]'>
+                <div className='flex items-center gap-10'>
                     <button className='flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-[20px] p-[12px]'><img src={BtnImg} alt="" />Услуги</button>
                     <div className='relative'>
                         <input type="text" className='w-[353px] py-[10px] border-[#C9C9C9] shadow border px-[10px] rounded-[10px]' placeholder='Поиск..' />
@@ -79,47 +108,19 @@ const Nav = () => {
 
             </div>
             <div className='flex justify-center gap-[100px] p-[15px] bg-[#F7F4F0]'>
-                <ul>
-                    <li className='font-bold'>Гражданство</li>
-                    <li className=''><Link to='/grajdanstvo'>Гражданство</Link></li>
-                    <li className=''><Link to='/rezidestvo'>Резиденство</Link></li>
-                    <li className=''><Link to='/biznes'>Бизнес</Link></li>
-                    <li className=''><Link to='/vizi'>Визы</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Недвижимость</li>
-                    <li className=''><Link to='/buy'>Купить</Link></li>
-                    <li className=''><Link to='/remove'>Снять</Link></li>
-                    <li className=''><Link to='/commercial'>Коммерческая</Link></li>
-                    <li className=''><Link to='/help'>Юридическая помощь</Link></li>
-                    <li className=''><Link to='/helpObject'>Предложить объект</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Индекс паспорта</li>
-                    <li className=''><Link to='/rating'>Рейтинг паспортов</Link></li>
-                    <li className=''><Link to='/countries'>Безвизовые страны</Link></li>
-                    <li className=''><Link to='/viza'>Виза</Link></li>
-                    <li className=''><Link to='/comparison'>Сравнение</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Авто</li>
-                    <li className=''><Link to='/sell\buy'>Купить / продать</Link></li>
-                    <li className=''><Link to='/sell\buy'>Купить / продать</Link></li>
-                    <li className=''><Link to='/arend'>Аренда</Link></li>
-                    <li className=''><Link to='/Cooperation'>Сотрудничество</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Консъерж - сервис</li>
-                    <li className=''><Link to='/arendYaxt'>Аренда яхт</Link></li>
-                    <li className=''><Link to='/arendHelicopter'>Аренда вертолета</Link></li>
-                    <li className=''><Link to='/arendVip'>Аренда vip авто</Link></li>
-                    <li className=''><Link to='/'>24/7 обслуживание гостей</Link></li>
-                </ul>
-                <ul>
-                    <li className='font-bold'>Медиа</li>
-                    <li className=''><Link to='/news'>Новости</Link></li>
-                    <li className=''><Link to='/blog'>Блог</Link></li>
-                </ul>
+                {
+                    main.map((item, index) => (
+                        <ul key={index}>
+                            <li className='font-bold'>{item.title}</li>
+                            {
+                                item.links.map((link, linkIndex) => (
+                                    <li key={linkIndex} className=''><Link to='/'>{link}</Link></li>
+                                ))
+                            }
+                        </ul>
+                    ))
+                }
+
             </div>
         </nav>
     )
