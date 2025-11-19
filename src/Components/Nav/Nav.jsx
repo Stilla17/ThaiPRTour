@@ -100,7 +100,7 @@ const Nav = () => {
                     <li className=''><Link to='/countries'>Безвизовые страны</Link></li>
                     <li className=''><Link to='/viza'>Виза</Link></li>
                     <li className=''><Link to='/comparison'>Сравнение</Link></li>
-                </ul>https://github.com/Stilla17/ThaiPRTour.git
+                </ul>
                 <ul>
                     <li className='font-bold'>Авто</li>
                     <li className=''><Link to='/sell\buy'>Купить / продать</Link></li>
