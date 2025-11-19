@@ -1,11 +1,14 @@
 import React from 'react'
-import Header from './Components/Header/Header'
+import { Route, Routes } from 'react-router'
+import Home from './Pages/Home'
 
 const App = () => {
   return (
-    <div>
-      <Header/>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </>
   )
 }
 

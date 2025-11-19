@@ -64,13 +64,13 @@ const Nav = () => {
                         <li><Link to='/aboutUs'>О нас</Link></li>
                     </ul>
                 </div>
-                <div className='flex items-center gap-[20px]' onClick={openData}>
+                <div className='flex items-center gap-5' onClick={openData}>
                     <button><img src={RussianFlagImg} alt="" /></button>
                     <img src={Img} alt="" />
                 </div>
                 {
                     open ? (
-                        <div className='absolute top-[40px] rounded-t-none z-10 border-t-0 right-[300px] border shadow pb-[1px] p-[12px] rounded-[10px]'>
+                        <div className='absolute top-10 rounded-t-none z-10 border-t-0 right-[300px] border shadow pb-px p-3 rounded-[10px]'>
                             <ul className='flex flex-col  text-[18px] font-medium'>
                                 <li><button className='mt-[10px]'><img width={'25px'} height={'18px'} src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/2560px-Flag_of_Uzbekistan.svg.png" alt="" /></button></li>
                                 <li><button><img width={'25px'} height={'18px'} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiyNArp3p_UVUmGhNnGTwqoVqon0KY7l70mQ&s" alt="" /></button></li>
