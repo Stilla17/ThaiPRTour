@@ -54,9 +54,9 @@ const Nav = () => {
             <div className='flex justify-between items-center border p-5 border-[#D9D9D9]'>
                 <img src={Logo} alt="" />
                 <div className='flex items-center gap-10'>
-                    <button className='flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-[20px] p-[12px]'><img src={BtnImg} alt="" />Услуги</button>
+                    <button className='flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-5 p-3'><img src={BtnImg} alt="" />Услуги</button>
                     <div className='relative'>
-                        <input type="text" className='w-[353px] py-[10px] border-[#C9C9C9] shadow border px-[10px] rounded-[10px]' placeholder='Поиск..' />
+                        <input type="text" className='w-[353px] py-2.5 border-[#C9C9C9] shadow border px-2.5 rounded-[10px]' placeholder='Поиск..' />
                         <img src={SearchImg} className='absolute right-3 top-[13px]' alt="" />
                     </div>
                     <ul className='flex gap-[30px] text-[18px] font-medium'>
@@ -72,35 +72,35 @@ const Nav = () => {
                     open ? (
                         <div className='absolute top-10 rounded-t-none z-10 border-t-0 right-[300px] border shadow pb-px p-3 rounded-[10px]'>
                             <ul className='flex flex-col  text-[18px] font-medium'>
-                                <li><button className='mt-[10px]'><img width={'25px'} height={'18px'} src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/2560px-Flag_of_Uzbekistan.svg.png" alt="" /></button></li>
+                                <li><button className='mt-2.5'><img width={'25px'} height={'18px'} src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/2560px-Flag_of_Uzbekistan.svg.png" alt="" /></button></li>
                                 <li><button><img width={'25px'} height={'18px'} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiyNArp3p_UVUmGhNnGTwqoVqon0KY7l70mQ&s" alt="" /></button></li>
                             </ul>
                         </div>
                     ) : ""
                 }
-                <div className='flex gap-[20px]'>
-                    <button onClick={openData2} className='rounded-[8px] py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border-[1px] '>Вход</button>
-                    <button className='rounded-[8px] py-[9px] px-[18px] bg-[#FE8505] text-white  '>Связаться</button>
+                <div className='flex gap-5'>
+                    <button onClick={openData2} className='rounded-lg py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border '>Вход</button>
+                    <button className='rounded-lg py-[9px] px-[18px] bg-[#FE8505] text-white  '>Связаться</button>
                 </div>
                 {
                     open2 ? (
-                        <div className='absolute top-[80px] border-[#C9C9C9] shadow-2xl bg-white z-10 w-[270px] right-[150px] border   p-[12px] rounded-[10px]'>
+                        <div className='absolute top-20 border-[#C9C9C9] shadow-2xl bg-white z-10 w-[270px] right-[150px] border   p-3 rounded-[10px]'>
                             <div className='flex  items-center justify-between'>
                                 <p className='font-bold'>Войти</p>
                                 <img onClick={() => openData2(!open2)} src={CancelImg} alt="" />
                             </div>
 
-                            <div className='flex items-center justify-between mt-[20px] '>
+                            <div className='flex items-center justify-between mt-5 '>
                                 <Link to='https://vk.com/' target='_blank'> <img src={VkImg} alt="" /></Link>
                                 <Link to='https://telegram.org/' target='_blank'> <img src={TgImg} alt="" /></Link>
                                 <Link to='https://www.facebook.com/' target='_blank'> <img src={FbImg} alt="" /></Link>
                                 <Link to='https://www.google.com/' target='_blank'> <img src={GoogleImg} alt="" /></Link>
                             </div>
-                            <input className='px-[20px] py-[12px] focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border-[1px] rounded-[15px]' type="text" placeholder='Логин или Email' />
-                            <input className='px-[20px] py-[12px] focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border-[1px] rounded-[15px]' type="text" placeholder='Пароль' />
+                            <input className='px-5 py-3 focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border rounded-[15px]' type="text" placeholder='Логин или Email' />
+                            <input className='px-5 py-3 focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border rounded-[15px]' type="text" placeholder='Пароль' />
                             <button className='w-full mt-[15px] rounded-[15px] py-[9px] px-[18px] bg-[#FE8505] text-white  '>Войти</button>
                             <p className='text-[18px] mt-[15px] text-blue-500 '>Забыли пароль?</p>
-                            <button className='rounded-[8px] py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border-1 w-full mt-[20px]'>Загистрироваться</button>
+                            <button className='rounded-lg py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border w-full mt-5'>Загистрироваться</button>
 
                         </div>
                     ) : ""
@@ -126,4 +126,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default Nav 

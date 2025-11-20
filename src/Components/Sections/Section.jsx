@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { animate } from 'framer-motion';
+import { animate } from  'framer-motion';
 import { motion, AnimatePresence } from "framer-motion";
 import './section.css';
 
