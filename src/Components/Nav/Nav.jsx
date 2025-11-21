@@ -1,129 +1,154 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Logo from './../../assets/Group 1675.svg';
 import BtnImg from './../../assets/Frame 1000003282.png';
 import SearchImg from './../../assets/Mask group (3).png';
 import RussianFlagImg from './../../assets/Russian.png';
 import Img from './../../assets/Polygon 46.png';
-import { Link, Links } from 'react-router';
-import CancelImg from './../../assets/Group 1685.png';
-import VkImg from './../../assets/Component 11 (4).png';
-import TgImg from './../../assets/Component 11 (1).png';
-import FbImg from './../../assets/Component 11 (2).png';
-import GoogleImg from './../../assets/Component 11 (3).png';
+import { Link } from 'react-router';
+import { IoIosMenu } from "react-icons/io";
+import img7 from './../../assets/Frame 2031.png';
+import img8 from './../../assets/Frame 1000003272.png';
 
 
-let main = [
-    {
-        title: 'Гражданство',
-        links: ['Гражданство', 'Резиденство', 'Бизнес', 'Визы']
-    },
-    {
-        title: 'Недвижимость',
-        links: ['Купить', 'Снять', 'Коммерческая', 'Юридическая помощь', 'Предложить объект']
-    },
-    {
-        title: 'Индекс паспорта',
-        links: ['Рейтинг паспортов', 'Безвизовые страны', 'Виза', 'Сравнение']
-    },
-    {
-        title: 'Авто',
-        links: ['Купить / продать', 'Купить / продать', 'Аренда', 'Сотрудничество']
-    },
-    {
-        title: 'Консъерж - сервис',
-        links: ['Аренда яхт', 'Аренда вертолета', 'Аренда vip авто', '24/7 обслуживание гостей']
-    },
-    {
-        title: 'Медиа',
-        links: ['Новости', 'Блог']
-    }
-]
+import { main } from './NodeService.js';
+import Vhod from '../Childrens/Vhod.jsx';
 
 const Nav = () => {
 
-    const [open, setOpen] = useState(false);
-    const [open2, setOpen2] = useState(false);
-    const openData = () => {
-        setOpen(!open);
-    }
-    const openData2 = () => {
-        setOpen2(!open2);
-    }
+
+    const [openLang, setOpenLang] = useState(false);
+    const [openLogin, setOpenLogin] = useState(false);
+    const [openNav, setOpenNav] = useState(false);
+    const toggleNav = () => setOpenNav(!openNav);
+
+    const toggleLang = () => setOpenLang(!openLang);
+    const toggleLogin = () => setOpenLogin(!openLogin);
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const toggle = (i) => {
+        setOpenIndex(openIndex === i ? null : i);
+    };
+
     return (
-        <nav >
-            <div className='flex justify-between items-center border p-5 border-[#D9D9D9]'>
-                <img src={Logo} alt="" />
+        <nav className=''>
+            {
+                openNav ? <div className=' justify-center max-md:flex hidden max-md:px-5'>
+                    <div className='flex  justify-between gap-[30px] items-center mt-5'>
+                        <img src={img8} onClick={() => toggleNav(!openNav)} alt="search-icon" />
+                        <input type="text" className='max-w-full shadow-2xl border-gray-400 border px-3 rounded-[10px]  py-3' placeholder='Поиск' />
+                    </div>
+                </div> : ""
+            }
+            <div className={!openNav ? 'flex justify-between items-center border p-5 border-[#D9D9D9]' : 'hidden'}>
+
+                <img src={Logo} alt="logo" />
+
                 <div className='flex items-center gap-10'>
-                    <button className='flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-5 p-3'><img src={BtnImg} alt="" />Услуги</button>
-                    <div className='relative'>
-                        <input type="text" className='w-[353px] py-2.5 border-[#C9C9C9] shadow border px-2.5 rounded-[10px]' placeholder='Поиск..' />
+                    <button className='max-md:hidden flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-5 p-3'>
+                        <img src={BtnImg} alt="" />Услуги
+                    </button>
+
+                    <div className='relative max-md:hidden'>
+                        <input type="text" className='w-[353px] py-2 border-[#C9C9C9] shadow border px-2 rounded-[10px]' placeholder='Поиск..' />
                         <img src={SearchImg} className='absolute right-3 top-[13px]' alt="" />
                     </div>
-                    <ul className='flex gap-[30px] text-[18px] font-medium'>
+
+                    <ul className='flex gap-[30px] text-[18px] font-medium max-[520px]:hidden'>
                         <li><Link to='/contacts'>Контакты</Link></li>
                         <li><Link to='/aboutUs'>О нас</Link></li>
                     </ul>
                 </div>
-                <div className='flex items-center gap-5' onClick={openData}>
-                    <button><img src={RussianFlagImg} alt="" /></button>
-                    <img src={Img} alt="" />
-                </div>
-                {
-                    open ? (
-                        <div className='absolute top-10 rounded-t-none z-10 border-t-0 right-[300px] border shadow pb-px p-3 rounded-[10px]'>
-                            <ul className='flex flex-col  text-[18px] font-medium'>
-                                <li><button className='mt-2.5'><img width={'25px'} height={'18px'} src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/2560px-Flag_of_Uzbekistan.svg.png" alt="" /></button></li>
-                                <li><button><img width={'25px'} height={'18px'} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiyNArp3p_UVUmGhNnGTwqoVqon0KY7l70mQ&s" alt="" /></button></li>
-                            </ul>
-                        </div>
-                    ) : ""
-                }
-                <div className='flex gap-5'>
-                    <button onClick={openData2} className='rounded-lg py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border '>Вход</button>
-                    <button className='rounded-lg py-[9px] px-[18px] bg-[#FE8505] text-white  '>Связаться</button>
-                </div>
-                {
-                    open2 ? (
-                        <div className='absolute top-20 border-[#C9C9C9] shadow-2xl bg-white z-10 w-[270px] right-[150px] border   p-3 rounded-[10px]'>
-                            <div className='flex  items-center justify-between'>
-                                <p className='font-bold'>Войти</p>
-                                <img onClick={() => openData2(!open2)} src={CancelImg} alt="" />
-                            </div>
 
-                            <div className='flex items-center justify-between mt-5 '>
-                                <Link to='https://vk.com/' target='_blank'> <img src={VkImg} alt="" /></Link>
-                                <Link to='https://telegram.org/' target='_blank'> <img src={TgImg} alt="" /></Link>
-                                <Link to='https://www.facebook.com/' target='_blank'> <img src={FbImg} alt="" /></Link>
-                                <Link to='https://www.google.com/' target='_blank'> <img src={GoogleImg} alt="" /></Link>
-                            </div>
-                            <input className='px-5 py-3 focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border rounded-[15px]' type="text" placeholder='Логин или Email' />
-                            <input className='px-5 py-3 focus:border-none w-full focus:outline-none border-[#D9D9D9] mt-[15px] border rounded-[15px]' type="text" placeholder='Пароль' />
-                            <button className='w-full mt-[15px] rounded-[15px] py-[9px] px-[18px] bg-[#FE8505] text-white  '>Войти</button>
-                            <p className='text-[18px] mt-[15px] text-blue-500 '>Забыли пароль?</p>
-                            <button className='rounded-lg py-[7px] px-[18px] bg-[#E3E2E2] border-[#C9C9C9] border w-full mt-5'>Загистрироваться</button>
+                <div className="relative">
+                    <div className='flex items-center gap-2 cursor-pointer' onClick={toggleLang}>
+                        <img src={RussianFlagImg} alt="flag" className='w-6' />
+                        <img src={Img} className={`transition-all duration-300 ${openLang ? 'rotate-180' : ''}`} alt="arrow" />
+                    </div>
 
+                    {openLang && (
+                        <div className='absolute right-0 mt-2 w-[140px] bg-white border shadow p-3 rounded-lg z-20'>
+                            <button className='cursor-pointer flex items-center gap-2 p-1 hover:bg-gray-100'>
+                                <img width="21" height="14" src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png' />
+                                English
+                            </button>
+
+                            <button className='cursor-pointer flex items-center gap-2 p-1 hover:bg-gray-100'>
+                                <img width="21" height="14" src='https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Uzbekistan.png' />
+                                O‘zbek
+                            </button>
                         </div>
-                    ) : ""
+                    )}
+                </div>
+
+                <div className='flex items-center '>
+                    <button onClick={toggleLogin} className='max-md:hidden ml-4 px-4 py-2 border rounded-lg'>Войти</button>
+                    <button className='max-md:hidden ml-4 px-4 py-2 border rounded-lg bg-[#FE8505] text-white'>Связаться</button>
+                </div> <IoIosMenu onClick={toggleNav} className='text-3xl max-md:block hidden' />
+
+                {
+                    openLogin && (
+
+                        < Vhod toggleLogin={toggleLogin} />
+                    )
                 }
 
             </div>
-            <div className='flex justify-center gap-[100px] p-[15px] bg-[#F7F4F0]'>
+
+            <div className='flex justify-between p-[15px] bg-[#F7F4F0] max-md:hidden'>
                 {
                     main.map((item, index) => (
                         <ul key={index}>
                             <li className='font-bold'>{item.title}</li>
                             {
-                                item.links.map((link, linkIndex) => (
-                                    <li key={linkIndex} className=''><Link to='/'>{link}</Link></li>
+                                item.allLiks[0].links.map((link, linkIndex) => (
+                                    <li key={linkIndex}><Link to={item.allLiks[1].link[linkIndex]}>{link}</Link></li>
                                 ))
                             }
                         </ul>
                     ))
                 }
+            </div>
 
+            <div className='p-5 z-10 md:hidden' data-aos="fade-left">
+                {
+                    openNav ? main.map((item, i) => (
+                        <div key={i} className="bg-white rounded-xl p-4 mb-3 shadow-sm">
+                            <div className='flex items-center '>
+                                <img src={item.img} alt="" />
+                                <div
+                                    onClick={() => toggle(i)}
+                                    className="flex justify-between items-center w-full"
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-3xl">{item.icon}</span>
+                                        <span className="font-semibold text-gray-800">{item.title}</span>
+                                    </div>
+
+                                    <img src={img7} className="text-xl transition-transform"
+                                        style={{
+                                            transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)",
+                                        }}>
+
+                                    </img>
+                                </div>
+                            </div>
+                            {
+                                openIndex === i && item.allLiks && (
+                                    <ul className="mt-4 ml-12 text-gray-600 space-y-1">
+                                        {item.allLiks[0].links.map((text, idx) => (
+                                            <li key={idx}>
+                                                <Link to={item.allLiks[1].link[idx]}>{text}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )
+                            }
+                        </div>
+                    )) : ""
+                }
             </div>
         </nav>
-    )
+    );
 }
 
-export default Nav 
+export default Nav;
