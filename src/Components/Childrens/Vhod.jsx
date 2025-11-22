@@ -1,37 +1,42 @@
-import React from 'react'
+import React from 'react';
 import CancelImg from './../../assets/Group 1685.png';
 import VkImg from './../../assets/Component 11 (4).png';
 import TgImg from './../../assets/Component 11 (1).png';
 import FbImg from './../../assets/Component 11 (2).png';
 import GoogleImg from './../../assets/Component 11 (3).png';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Vhod = ({ toggleLogin }) => {
-    return (
-        <div className='absolute top-20 border-[#C9C9C9] shadow-2xl bg-white z-10 w-[270px] right-[150px] border p-3 rounded-[10px]'>
-            <div className='flex items-center justify-between'>
-                <p className='font-bold'>Войти</p>
-                <img onClick={toggleLogin} src={CancelImg} alt="" />
-            </div>
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+      <div className="bg-white w-[300px] p-5 rounded-xl relative shadow-2xl">
+        <img
+          onClick={toggleLogin}
+          src={CancelImg}
+          alt="Закрыть"
+          className="absolute top-3 right-3 w-6 h-6 cursor-pointer"
+        />
 
-            <div className='flex items-center justify-between mt-5'>
-                <Link to='https://vk.com/' target='_blank'><img src={VkImg} /></Link>
-                <Link to='https://telegram.org/' target='_blank'><img src={TgImg} /></Link>
-                <Link to='https://www.facebook.com/' target='_blank'><img src={FbImg} /></Link>
-                <Link to='https://www.google.com/' target='_blank'><img src={GoogleImg} /></Link>
-            </div>
+        <p className="font-bold text-xl text-center mb-4">Войти</p>
 
-            <input className='px-5 py-3 w-full border rounded-[15px] mt-[15px]' placeholder='Логин или Email' />
-            <input className='px-5 py-3 w-full border rounded-[15px] mt-[15px]' placeholder='Пароль' />
-
-            <button className='w-full mt-[15px] rounded-[15px] py-[9px] px-[18px] bg-[#FE8505] text-white'>Войти</button>
-            <p className='text-[18px] mt-[15px] text-blue-500'>Забыли пароль?</p>
-
-            <button className='rounded-2 py-[7px] px-[18px] bg-[#E3E2E2]  w-full mt-5'>
-                Зарегистрироваться
-            </button>
+        <div className='flex items-center justify-between mb-4'>
+          <Link to='https://vk.com/' target='_blank'><img src={VkImg} alt="VK" /></Link>
+          <Link to='https://telegram.org/' target='_blank'><img src={TgImg} alt="TG" /></Link>
+          <Link to='https://www.facebook.com/' target='_blank'><img src={FbImg} alt="FB" /></Link>
+          <Link to='https://www.google.com/' target='_blank'><img src={GoogleImg} alt="G" /></Link>
         </div>
-    )
+
+        <input className='px-4 py-2 w-full border rounded-lg mb-3' placeholder='Логин или Email' />
+        <input className='px-4 py-2 w-full border rounded-lg mb-4' placeholder='Пароль' />
+
+        <button className='w-full py-2 mb-2 bg-orange-500 text-white rounded-lg'>Войти</button>
+
+        <p className='text-center text-blue-500 mb-2 cursor-pointer'>Забыли пароль?</p>
+
+        <button className='w-full py-2 bg-gray-200 rounded-lg'>Зарегистрироваться</button>
+      </div>
+    </div>
+  )
 }
 
-export default Vhod
+export default Vhod;
