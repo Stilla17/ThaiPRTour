@@ -10,12 +10,40 @@ const countryOptions = [
   { value: 'Rossiya', label: 'Россия' },
   { value: 'Po11a', label: 'По11а' },
 ];
-
+const defaultValues = {
+  name: '',
+  surname: '',
+  login: '',
+  nickname: '',
+  email: '',
+  telegram: '',
+  password: '',
+  password_repeat: '',
+  country: null,
+  birth_day: null,
+  birth_month: null,
+  birth_year: null,
+  gender: ''
+};
 const dayOptions = Array.from({ length: 31 }, (_, i) => ({
   value: i + 1,
   label: String(i + 1),
 }));
-
+ const registerdata = async (data) => {
+    try {
+      const response = await fetch('https://68c141a798c818a69401336f.mockapi.io/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) throw new Error('Ошибка при отправке данных');
+      const result = await response.json();
+      console.log('Данные успешно отправлены:', result);
+      reset(defaultValues);
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
+  };
 const monthOptions = [
   { value: '1', label: 'Января' },
   { value: '2', label: 'Февраля' },
@@ -36,19 +64,16 @@ const yearOptions = Array.from({ length: 80 }, (_, i) => ({
   label: String(2024 - i),
 }));
 
-const Register = () => {
+   const Register = () => {
   const {
     register,
     handleSubmit,
     reset,
     control,
     formState: { errors },
-  } = useForm();
+  } = useForm(defaultValues);
 
-  const registerdata = (data) => {
-    console.log(data);
-    reset();
-  };
+
 
   return (
     <>
