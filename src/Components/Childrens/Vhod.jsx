@@ -33,7 +33,7 @@ const Vhod = ({ toggleLogin }) => {
 
         <p className='text-center text-blue-500 mb-2 cursor-pointer'>Забыли пароль?</p>
 
-        <button className='w-full py-2 bg-gray-200 rounded-lg'>Зарегистрироваться</button>
+       <Link to={"/register"}> <button className='w-full py-2 bg-gray-200 rounded-lg'>Зарегистрироваться</button></Link>
       </div>
     </div>
   )

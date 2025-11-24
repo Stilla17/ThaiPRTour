@@ -1,9 +1,9 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
-import Registernav from '../Nav/Registernav.jsx';
+import Registernav from '../Components/Nav/Registernav.jsx';
 import Select from 'react-select';
-import FooterList from '../Footer/Footer.jsx';
+import FooterList from '../Components/Footer/Footer.jsx';
 
 const countryOptions = [
   { value: 'Polsha', label: 'Польша' },
