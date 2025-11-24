@@ -27,7 +27,9 @@ const Nav = () => {
 
     const toggle = (i) => {
         setOpenIndex(openIndex === i ? null : i);
-    };
+    }
+
+
 
     return (
         <nav className=''>
@@ -39,12 +41,12 @@ const Nav = () => {
                     </div>
                 </div> : ""
             }
-            <div className={!openNav ? 'flex justify-between items-center border p-5 border-[#D9D9D9]' : 'hidden'}>
+            <div className={'flex justify-between items-center border p-5 border-[#D9D9D9]' }>
 
                 <img src={Logo} alt="logo" />
 
                 <div className='flex items-center gap-10'>
-                    <button className='max-md:hidden flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-5 p-3'>
+                    <button onClick={toggleNav} className='max-md:hidden flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-5 p-3'>
                         <img src={BtnImg} alt="" />Услуги
                     </button>
 
@@ -94,7 +96,7 @@ const Nav = () => {
 
             </div>
 
-            <div className='flex justify-between p-[15px] bg-[#F7F4F0] max-md:hidden'>
+            <div className={openNav ? 'flex justify-between p-[15px] bg-[#F7F4F0] max-md:hidden' : 'hidden'}>
                 {
                     main.map((item, index) => (
                         <ul key={index}>
@@ -109,7 +111,7 @@ const Nav = () => {
                 }
             </div>
 
-            <div className='p-5 z-10 md:hidden' data-aos="fade-left">
+            <div className='block p-5 z-10 md:hidden' data-aos="fade-left">
                 {
                     openNav ? main.map((item, i) => (
                         <div key={i} className="bg-white rounded-xl p-4 mb-3 shadow-sm">
