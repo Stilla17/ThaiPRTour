@@ -8,10 +8,10 @@ const SectionInfo = () => {
         setOpenIndex(openIndex === i ? null : i);
     };
     return (
-        <>
+        <section className='mt-[100px]'>
             {
                 main.map((item, index) => (
-                    <div key={index} className='max-w-[1300px] mx-auto px-5'>
+                    <div key={index} className='max-w-[1300px] mx-auto px-5 '>
                         <div onClick={() => toggle(index)} className=' border-b border-[#D9D9D9]  py-[15px] flex flex-col gap-[10px] cursor-pointer'>
                             <div className='flex items-center gap-5 justify-between'>
                                 <div className='font-bold'>
@@ -36,7 +36,7 @@ const SectionInfo = () => {
 
                 ))
             }
-        </>
+        </section >
     )
 }
 
