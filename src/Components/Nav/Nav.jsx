@@ -54,7 +54,7 @@ const Nav = () => {
                     </div>
 
                     <ul className='flex gap-[30px] text-[18px] font-medium max-[520px]:hidden'>
-                        <li><Link to='/contacts'>Контакты</Link></li>
+                        <li><Link to='/test'>Контакты</Link></li>
                         <li><Link to='/aboutUs'>О нас</Link></li>
                     </ul>
                 </div>
