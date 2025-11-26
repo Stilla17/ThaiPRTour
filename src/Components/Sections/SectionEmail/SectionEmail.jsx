@@ -22,9 +22,9 @@ const SectionEmail = () => {
     };
 
     return (
-        <div className="flex w-full rounded-xl overflow-hidden bg-white">
+        <div className="flex w-full rounded-xl bg-white flex-wrap max-md:flex-col max-md:w-full">
 
-            <div className="w-2/5 bg-[#FFD028] p-8 flex flex-col gap-4">
+            <div className="w-2/5 bg-[#FFD028] p-8 flex flex-col gap-4 max-md:w-full">
                 <h2 className="text-2xl font-bold">Свяжитесь с нами</h2>
 
                 <p className="text-sm text-[#444] leading-[1.4]">
@@ -55,7 +55,7 @@ const SectionEmail = () => {
                 </button>
             </div>
 
-            <div className="w-3/5">
+            <div className="w-3/5 max-md:w-full h-[400px]">
                 <img
                     src={img}
                     alt="contact"

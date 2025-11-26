@@ -15,7 +15,6 @@ import Vhod from '../Childrens/Vhod.jsx';
 
 const Nav = () => {
 
-
     const [openLang, setOpenLang] = useState(false);
     const [openLogin, setOpenLogin] = useState(false);
     const [openNav, setOpenNav] = useState(false);
@@ -28,8 +27,6 @@ const Nav = () => {
     const toggle = (i) => {
         setOpenIndex(openIndex === i ? null : i);
     }
-
-
 
     return (
         <nav className=''>

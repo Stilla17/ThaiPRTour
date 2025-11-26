@@ -30,12 +30,11 @@ const AdminPanel = () => {
 
                     <form onSubmit={(e) => e.preventDefault()} className="space-y-4 mt-4 pb-10">
                         Картинка
-                        <label htmlFor="input" className="block w-full cursor-pointer rounded-xl border border-gray-300 bg-gray-50 p-4 text-center text-gray-600 hover:bg-gray-100 transition">Загрузить картинку </label>
                         <input
                             {...register('image', { required: true })}
                             id="input"
-                            type="file"
-                            className="hidden"
+                            type="text"
+                            className="block w-full border rounded p-2"
                         />
 
                         <div>
