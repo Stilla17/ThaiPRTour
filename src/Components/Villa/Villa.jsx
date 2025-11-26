@@ -10,9 +10,9 @@ import ame from "./../../../public/Group 1688.jpg";
 import named from "./../../../public/Rectangle 1165.png";
 import name from "./../../../public/Rectangle 1164 (1).png";
 import nf from './../../../public/Rectangle 1165 (2).png';
-import SplitText from './../../Reactbits/SplitText.jsx';
+import SplitText from '../../Reactbits/SplitText.jsx';
 
-const Section = () => {
+const Villa = () => {
 
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
@@ -192,4 +192,4 @@ const Section = () => {
   );
 };
 
-export default Section;
+export default Villa;
