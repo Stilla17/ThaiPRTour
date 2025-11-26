@@ -11,7 +11,6 @@ import TgImg from './../../assets/Component 11 (1).png';
 import FbImg from './../../assets/Component 11 (2).png';
 import GoogleImg from './../../assets/Component 11 (3).png';
 
-
 let main = [
     {
         title: 'Гражданство',
@@ -38,6 +37,13 @@ let main = [
         links: ['Новости', 'Блог']
     }
 ]
+let mainn = [
+    {
+        title: 'Гражданство',
+        links: ['Гражданство', 'Резиденство', 'Бизнес', 'Визы']
+    },
+]    
+
 
 const Nav = () => {
 
@@ -107,6 +113,16 @@ const Nav = () => {
                 }
 
             </div>
+            
+            {mainn.map((item, index) => (
+    <div key={index}>
+        {item.title === 'Гражданство' 
+            ? <Link to="/citizen">{item.title}</Link> 
+            : item.title
+        }
+    </div>
+))}
+            
             <div className='flex justify-center gap-[100px] p-[15px] bg-[#F7F4F0]'>
                 {
                     main.map((item, index) => (
