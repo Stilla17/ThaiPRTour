@@ -10,7 +10,6 @@ import ame from "./../../../public/Group 1688.jpg";
 import named from "./../../../public/Rectangle 1165.png";
 import name from "./../../../public/Rectangle 1164 (1).png";
 import nf from './../../../public/Rectangle 1165 (2).png';
-import SplitText from '../../Reactbits/SplitText.jsx';
 
 const Villa = () => {
 
@@ -20,20 +19,7 @@ const Villa = () => {
 
   return (
     <section className="py-14">
-      <SplitText
-        text="Hello, GSAP!"
-        className="text-2xl font-semibold text-center"
-        delay={100}
-        duration={0.6}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-        onLetterAnimationComplete={handleAnimationComplete}
-      />
+      
       <div className="max-w-[1276px] mx-auto px-4">
 
         <div className="flex items-center justify-between">
