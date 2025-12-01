@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import img from './../../../assets/Rectangle 1176.png';
-const SectionEmail = () => {
+
+const SectionEmail = ({ image, text, text2 }) => {
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -14,6 +15,8 @@ const SectionEmail = () => {
             .then(
                 () => {
                     console.log('SUCCESS!');
+                    alert('Сообщение отправлено успешно!');
+
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
@@ -22,48 +25,53 @@ const SectionEmail = () => {
     };
 
     return (
-        <div className="flex w-full rounded-xl bg-white flex-wrap max-md:flex-col max-md:w-full">
+        <div className={`flex w-full rounded-xl mt-10 bg-white flex-wrap max-md:flex-col max-md:w-full`}>
 
-            <div className="w-2/5 bg-[#FFD028] p-8 flex flex-col gap-4 max-md:w-full">
-                <h2 className="text-2xl font-bold">Свяжитесь с нами</h2>
+            <form
+                ref={form}
+                onSubmit={sendEmail}
+                className="w-2/5 bg-[#FFD028] p-8 flex flex-col gap-4 max-md:w-full"
+            >
+                <h2 className="text-2xl font-bold">{text || "Свяжитесь с нами"}</h2>
 
                 <p className="text-sm text-[#444] leading-[1.4]">
-                    Напишите свои контакты и в ближайшее время с вами свяжется
-                    наш менеджер для уточнения вашего вопроса
+                    {text2 ||
+                        'Если у вас есть вопросы, свяжитесь с нами, и мы свяжемся с вами в ближайшее время.'}
                 </p>
 
                 <input
                     type="text"
+                    name="name"
                     placeholder="Имя"
                     className="w-full px-4 py-3 rounded-md outline-none bg-white "
                 />
 
                 <input
                     type="text"
+                    name="phone"
                     placeholder="Телефон"
                     className="w-full px-4 py-3 rounded-md outline-none bg-white "
                 />
 
                 <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="w-full px-4 py-3 rounded-md outline-none bg-white "
                 />
 
-                <button className="mt-2 w-[150px] bg-black text-white py-3 rounded-md">
+                <button
+                    type="submit"
+                    className="mt-2 w-[150px] bg-black text-white py-3 rounded-md"
+                >
                     Отправить
                 </button>
-            </div>
+                <p>Меня интересует <span className='font-bold'>[Layan Verde Phuket]</span></p>
+            </form>
 
-            <div className="w-3/5 max-md:w-full h-[400px]">
-                <img
-                    src={img}
-                    alt="contact"
-                    className="w-full h-full object-cover"
-                />
-            </div>
+
         </div>
-
     );
 };
+
 export default SectionEmail;

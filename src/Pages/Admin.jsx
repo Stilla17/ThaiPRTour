@@ -12,7 +12,7 @@ const AdminPanel = () => {
                 size: data.size,
                 newbuild: data.newbuild,
                 info: data.info,
-                image: data.image[0] ? data.image[0].name : ''
+                img: data.image
             });
             console.log(res.message);
             alert('Обьект успешно добавлен')

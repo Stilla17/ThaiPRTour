@@ -9,6 +9,7 @@ const SectionNedvij = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [currency, setCurrency] = useState("USD");
     const [currency2, setCurrency2] = useState("all");
+
     const PageWrapper = ({ children }) => (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -45,14 +46,16 @@ const SectionNedvij = () => {
                                             <button onClick={() => toggleDropdown("type")} className='flex gap-[50px] items-center py-2 w-44 px-2 rounded-[10px] border border-[#D9D9D9] shadow'>
                                                 Новостройка <img src={iconSelect} alt="" />
                                             </button>
-                                            {activeDropdown === "type" && (
-                                                <div className='p-5 rounded-[15px] absolute w-[150px] flex flex-col items-start bg-white border border-[#D9D9D9] shadow mt-5'>
-                                                    <button>Новостройка</button>
-                                                    <button>Вторичка</button>
-                                                    <button>Снять</button>
-                                                    <button>Посуточно</button>
-                                                </div>
-                                            )}
+                                            {
+                                                activeDropdown === "type" && (
+                                                    <div className='p-5 rounded-[15px] absolute w-[150px] flex flex-col items-start bg-white border border-[#D9D9D9] shadow mt-5'>
+                                                        <button>Новостройка</button>
+                                                        <button>Вторичка</button>
+                                                        <button>Снять</button>
+                                                        <button>Посуточно</button>
+                                                    </div>
+                                                )
+                                            }
                                         </div>
 
                                         <div>
@@ -60,7 +63,7 @@ const SectionNedvij = () => {
                                                 Кол-во комнат <img src={iconSelect} alt="" />
                                             </button>
                                             {activeDropdown === "rooms" && (
-                                                <div className='p-5 rounded-[15px] items-start absolute w-[100px] flex flex-col bg-white border border-[#D9D9D9] shadow mt-5'>
+                                                <div className='p-5 rounded-[15px] items-start z-10 bg-white absolute w-[100px] flex flex-col border border-[#D9D9D9] shadow mt-5'>
                                                     {[1, 2, 3, 4, 5, 6, 8, 9].map(n => <button key={n}>{n}</button>)}
                                                 </div>
                                             )}
@@ -70,48 +73,49 @@ const SectionNedvij = () => {
                                             <button onClick={() => toggleDropdown("price")} className='flex gap-[50px] items-center py-2 w-32 px-2 rounded-[10px] border border-[#D9D9D9] shadow'>
                                                 Цена <img src={iconSelect} alt="" />
                                             </button>
-                                            {activeDropdown === "price" && (
-                                                <div className='p-5 rounded-[15px] absolute w-70 flex flex-col bg-white border border-[#D9D9D9] shadow mt-5'>
-                                                    <div className='flex gap-5'>
-                                                        <button
-                                                            onClick={() => setCurrency("USD")}
-                                                            className={currency === "USD" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
-                                                        >
-                                                            USD ($)
-                                                        </button>
-                                                        <button
-                                                            onClick={() => setCurrency("THB")}
-                                                            className={currency === "THB" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
-                                                        >
-                                                            THB (฿)
-                                                        </button>
+                                            {
+                                                activeDropdown === "price" && (
+                                                    <div className='p-5 rounded-[15px] z-20  absolute w-70 flex flex-col bg-white border border-[#D9D9D9] shadow mt-5'>
+                                                        <div className='flex gap-5'>
+                                                            <button
+                                                                onClick={() => setCurrency("USD")}
+                                                                className={currency === "USD" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
+                                                            >
+                                                                USD ($)
+                                                            </button>
+                                                            <button
+                                                                onClick={() => setCurrency("THB")}
+                                                                className={currency === "THB" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
+                                                            >
+                                                                THB (฿)
+                                                            </button>
+                                                        </div>
+                                                        <div className='flex items-center gap-5 mt-2'>
+                                                            <input className='w-25 rounded-2xl border-[#D9D9D9] p-2 border' type="text" placeholder='От' />
+                                                            <input className='w-25 rounded-2xl border-[#D9D9D9] p-2 border' type="text" placeholder='До' />
+                                                        </div>
+                                                        <div className='flex items-center flex-wrap gap-4 mt-2'>
+                                                            <button
+                                                                onClick={() => setCurrency2("all")}
+                                                                className={currency2 === "all" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
+                                                            >
+                                                                За все
+                                                            </button>
+                                                            <button
+                                                                onClick={() => setCurrency2("m2")}
+                                                                className={currency2 === "m2" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
+                                                            >
+                                                                За м²
+                                                            </button>
+                                                            <button
+                                                                onClick={() => setCurrency2("dogovor")}
+                                                                className={currency2 === "dogovor" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
+                                                            >
+                                                                Договорная
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div className='flex items-center gap-5 mt-2'>
-                                                        <input className='w-25 rounded-2xl border-[#D9D9D9] p-2 border' type="text" placeholder='От' />
-                                                        <input className='w-25 rounded-2xl border-[#D9D9D9] p-2 border' type="text" placeholder='До' />
-                                                    </div>
-                                                    <div className='flex items-center flex-wrap gap-4 mt-2'>
-                                                        <button
-                                                            onClick={() => setCurrency2("all")}
-                                                            className={currency2 === "all" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
-                                                        >
-                                                            За все
-                                                        </button>
-                                                        <button
-                                                            onClick={() => setCurrency2("m2")}
-                                                            className={currency2 === "m2" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
-                                                        >
-                                                            За м²
-                                                        </button>
-                                                        <button
-                                                            onClick={() => setCurrency2("dogovor")}
-                                                            className={currency2 === "dogovor" ? "p-2 rounded-[5px] bg-[#FE8505] text-white" : "p-2 rounded-[5px] bg-[#E3E2E2]"}
-                                                        >
-                                                            Договорная
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            )}
+                                                )}
                                         </div>
 
                                         <div>
@@ -130,7 +134,7 @@ const SectionNedvij = () => {
                                                 <img src={img2} alt="" /> на карте
                                             </button>
                                             {activeDropdown === "map" && (
-                                                <div className='p-5 rounded-[15px] absolute right-[270px] flex flex-col bg-white border border-[#D9D9D9] shadow mt-5'>
+                                                <div className='p-5 rounded-[15px] z-20 absolute right-[270px] flex flex-col bg-white border border-[#D9D9D9] shadow mt-5'>
                                                     <div className='flex justify-end'>
                                                         <button onClick={() => setActiveDropdown(null)} className='mb-2'>
                                                             <XIcon className='bg-red-500 text-white' />
@@ -165,7 +169,6 @@ const SectionNedvij = () => {
                                     <h1>Коммерческая</h1>
                                 </PageWrapper>
                             )}
-
                         </AnimatePresence>
                     </div>
                 </div>
