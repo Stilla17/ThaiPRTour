@@ -52,6 +52,7 @@ const FooterList = () => {
               <img src={logo1} alt="telegram" />
               <img src={logo3} alt="telegram" />
               <img src={logo2} alt="facebook" />
+              <a href="/register"></a>
               <img src={logo4} alt="facebook" />
             </div>
           </div>
@@ -77,7 +78,6 @@ const FooterList = () => {
         <div className="w-[90%] h-px bg-gray-600"></div>
       </div>
 
-    
     </div>
   );
 };

@@ -6,6 +6,9 @@ import Citizen from './Pages/Citizen'
 import Admin from './Pages/Admin.jsx';
 import Nedvij from './Pages/Nedvij.jsx'
 import NedvijInfoPage from './Pages/NedvijInfoPage.jsx'
+import Register from './Pages/Register'
+import NotFound from './Pages/NotFound'
+
 const App = () => {
   return (
     <>
@@ -15,9 +18,11 @@ const App = () => {
           <Route path="/citizen" element={<Citizen />} />
           <Route path='/estate' element={<Nedvij />} />
           <Route path='/estate/:id' element={<NedvijInfoPage />} />
+          <Route path='/register' element={<Register />} />
         </Route>
         <Route path='/admin' element={<Admin />} />
 
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )

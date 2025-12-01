@@ -6,6 +6,8 @@ import SwiperComponent from '../Components/Center/SwiperComponent/SwiperComponen
 import Categories from '../Components/Center/Categories/Categories.jsx';
 import Villa from '../Components/Villa/Villa.jsx';
 
+import FooterList from './../Components/Footer/Footer.jsx';
+import Register from './Register.jsx';
 const Home = () => {
     return (
         <div className='max-w-[1200px] mx-auto'>
@@ -14,6 +16,7 @@ const Home = () => {
             <Section />
             <Villa />
             <SectionEmail />
+            {/* <SectionEma il/> */}
             <Sectioninfo />
         </div>
     )
