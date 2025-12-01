@@ -28,7 +28,7 @@ export  const main = [
 
             },
             {
-                link: ['Buy', 'Rent', 'Commercial', 'Legal/assistance', 'Offer/an/object']
+                link: ['Buy', 'estate', 'Commercial', 'Legal/assistance', 'Offer/an/object']
 
             }
         ]

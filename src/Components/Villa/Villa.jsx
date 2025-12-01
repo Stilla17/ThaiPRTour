@@ -19,7 +19,6 @@ const Villa = () => {
 
   return (
     <section className="py-14">
-      
       <div className="max-w-[1276px] mx-auto px-4">
 
         <div className="flex items-center justify-between">
@@ -30,7 +29,7 @@ const Villa = () => {
             className="flex items-center gap-10"
           >
             <h1 className="text-[28px] font-bold">Недвижимость в Тайланде</h1>
-            <p className="text-gray-500 hover:text-black cursor-pointer transition">Смотреть все</p>
+            <p className="text-gray-500 hover:text-black cursor-pointer transition max-md:hidden">Смотреть все</p>
           </motion.div>
 
           <div className="flex gap-3">
@@ -47,7 +46,7 @@ const Villa = () => {
           </div>
         </div>
 
-        <div className="mt-14 flex items-start justify-between gap-10">
+        <div className="mt-14 flex items-start justify-between gap-10 flex-wrap max-md:justify-center">
           <motion.img
             src={name}
             initial={{ opacity: 0, x: -30 }}
@@ -105,14 +104,14 @@ const Villa = () => {
         <div className="flex items-center justify-between mt-14">
           <div className="flex items-center gap-10">
             <h1 className="text-[28px] font-bold">Недвижимость в Тайланде</h1>
-            <p className="text-gray-500 hover:text-black cursor-pointer transition">Смотреть все</p>
+            <p className="text-gray-500 hover:text-black cursor-pointer transition max-md:hidden">Смотреть все</p>
           </div>
           <div className="flex gap-3">
-            <FaCaretLeft className="border border-black w-[53px] h-[36px] p-2 rounded-xl hover:bg-black hover:text-white transition" />
-            <FaCaretRight className="border border-black w-[53px] h-[36px] p-2 rounded-xl hover:bg-black hover:text-white transition" />
+            <FaCaretLeft className="border border-black w-[53px] h-9 p-2 rounded-xl hover:bg-black hover:text-white transition" />
+            <FaCaretRight className="border border-black w-[53px] h-9 p-2 rounded-xl hover:bg-black hover:text-white transition" />
           </div>
         </div>
-        <div className="mt-14 flex items-start justify-between gap-10">
+        <div className="mt-14 flex items-start justify-between gap-10 flex-wrap max-md:justify-center">
           <motion.img src={name} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition" />
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="w-[757px] text-[15px] text-gray-700 space-y-4" >
@@ -127,19 +126,19 @@ const Villa = () => {
         <div className="flex items-center justify-between mt-14">
           <div className="flex items-center gap-10">
             <h1 className="text-[28px] font-bold">Статьи</h1>
-            <p className="text-gray-500 hover:text-black cursor-pointer transition">Смотреть все</p>
+            <p className="text-gray-500 hover:text-black cursor-pointer transition max-md:hidden">Смотреть все</p>
           </div>
 
           <div className="flex gap-3">
-            <FaCaretLeft className="border border-black w-[53px] h-[36px] p-2 rounded-xl hover:bg-black hover:text-white transition" />
-            <FaCaretRight className="border border-black w-[53px] h-[36px] p-2 rounded-xl hover:bg-black hover:text-white transition" />
+            <FaCaretLeft className="border border-black w-[53px] h-9 p-2 rounded-xl hover:bg-black hover:text-white transition" />
+            <FaCaretRight className="border border-black w-[53px] h-9 p-2 rounded-xl hover:bg-black hover:text-white transition" />
           </div>
         </div>
         <div>
           <div className="max-w-[301px] h-[299px] border border-black rounded-2xl p-4 hover:shadow-xl hover:-translate-y-2 transition mt-14">
             <img src={nf} alt="" />
             <h1 className="font-bold ml-7">Layan Verde Phuket</h1>
-            <div className="flex items-cnter justify-around mt-3 border-1 border-black ">
+            <div className="flex items-cnter justify-around mt-3 border border-black ">
               <h1 className="text-[16px] text-orange-500">12,000฿ /месяц</h1>
               <div className="flex items-center gap-4 text-[20px]">
                 <FaWhatsapp className="hover:text-green-500 hover:scale-125 transition" />
@@ -151,12 +150,12 @@ const Villa = () => {
         <div className="flex items-center justify-between mt-14">
           <div className="flex items-center gap-10">
             <h1 className="text-[28px] font-bold">Статьи</h1>
-            <p className="text-gray-500 hover:text-black cursor-pointer transition">Смотреть все</p>
+            <p className="text-gray-500 hover:text-black cursor-pointer transition max-md:hidden">Смотреть все</p>
           </div>
 
           <div className="flex gap-3">
-            <FaCaretLeft className="border border-black w-[53px] h-[36px] p-2 rounded-xl hover:bg-black hover:text-white transition" />
-            <FaCaretRight className="border border-black w-[53px] h-[36px] p-2 rounded-xl hover:bg-black hover:text-white transition" />
+            <FaCaretLeft className="border border-black w-[53px] h-9 p-2 rounded-xl hover:bg-black hover:text-white transition" />
+            <FaCaretRight className="border border-black w-[53px] h-9 p-2 rounded-xl hover:bg-black hover:text-white transition" />
           </div>
         </div>
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-14 flex items-center justify-center">
@@ -164,8 +163,8 @@ const Villa = () => {
             <img src={n} className="rounded-xl hover:scale-[1.03] transition" />
             <div className="mt-4 ml-1">
               <p className="text-gray-500 text-[14px]">Недвижимость</p>
-                <h1 className="font-semibold text-[17px] leading-5 mt-2">
-                  Что такое гражданство ЕС и как его получить?
+              <h1 className="font-semibold text-[17px] leading-5 mt-2">
+                Что такое гражданство ЕС и как его получить?
               </h1>
             </div>
           </div>

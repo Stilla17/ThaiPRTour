@@ -38,9 +38,11 @@ const Nav = () => {
                     </div>
                 </div> : ""
             }
-            <div className={'flex justify-between items-center border p-5 border-[#D9D9D9]' }>
+            <div className={'flex justify-between items-center border p-5 border-[#D9D9D9]'}>
 
-                <img src={Logo} alt="logo" />
+                <Link to={'/'}>
+                    <img src={Logo} alt="logo" />
+                </Link>
 
                 <div className='flex items-center gap-10'>
                     <button onClick={toggleNav} className='max-md:hidden flex items-center border shadow border-[#C9C9C9] rounded-[10px] gap-5 p-3'>
