@@ -5,6 +5,10 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router'
 import './i18n.js';
 
+import "primereact/resources/themes/lara-light-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <StrictMode>

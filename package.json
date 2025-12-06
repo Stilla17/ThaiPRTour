@@ -1,49 +1,54 @@
 {
-  "name": "theme",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "thaiprtour",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stilla17/ThaiPRTour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stilla17/ThaiPRTour/issues"
+  },
+  "homepage": "https://github.com/Stilla17/ThaiPRTour#readme",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@gsap/react": "^2.1.2",
-    "@tailwindcss/vite": "^4.1.16",
-    "aos": "^2.3.4",
+    "@vitejs/plugin-react-swc": "^4.2.2",
     "axios": "^1.13.2",
-    "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "i18next": "^25.7.1",
     "json-server": "^1.0.0-beta.3",
+    "chart.js": "^4.5.1",
+    "framer-motion": "^12.23.25",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.555.0",
+    "primeicons": "^7.0.0",
     "primereact": "^10.9.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-hook-form": "^7.66.0",
     "react-i18next": "^16.3.5",
+    "react-chartjs-2": "^5.3.1",
+    "react-hook-form": "^7.67.0",
+    "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
     "react-router": "^7.9.6",
     "react-router-dom": "^7.9.6",
     "react-select": "^5.10.2",
-    "react-spinners": "^0.17.0",
     "styled-components": "^6.1.19",
     "swiper": "^12.0.3",
-    "tailwindcss": "^4.1.16"
+    "vite": "^7.2.6"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react-swc": "^4.1.0",
-    "eslint": "^9.36.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.22",
-    "globals": "^16.4.0",
-    "vite": "^7.1.7"
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "^4.1.17"
   }
 }

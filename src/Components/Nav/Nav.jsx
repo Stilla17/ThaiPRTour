@@ -13,6 +13,7 @@ import img8 from './../../assets/Frame 1000003272.png';
 import { main } from './NodeService.js';
 import Vhod from '../Childrens/Vhod.jsx';
 import { useTranslation } from 'react-i18next';
+import Input from '../Childrens/Input.jsx';
 
 const Nav = () => {
 
@@ -57,7 +58,7 @@ const Nav = () => {
                     </button>
 
                     <div className='relative max-md:hidden'>
-                        <input type="text" className='w-[353px] py-2 border-[#C9C9C9] shadow border px-2 rounded-[10px]' placeholder='Поиск..' />
+                        <Input />
                         <img src={SearchImg} className='absolute right-3 top-[13px]' alt="" />
                     </div>
 

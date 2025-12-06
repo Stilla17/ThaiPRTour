@@ -5,16 +5,26 @@ import { useParams } from 'react-router';
 import img from './../assets/Component 11 (5).png';
 import img2 from './../assets/Frame 1000003273.png';
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router';
 
 const NedvijInfoPage = () => {
     const { id } = useParams()
     const [card, setCard] = useState([])
+    const [data, setData] = useState([])
     const form = useRef()
 
     const fetchData = async () => {
         try {
             const res = await axios.get(`https://68e211a48943bf6bb3c58500.mockapi.io/todoList/objects/${id}`)
             setCard(res.data)
+        } catch (error) {
+            console.error("Error fetching data:", error)
+        }
+    }
+    const renderAll = async () => {
+        try {
+            const res = await axios.get(`https://68e211a48943bf6bb3c58500.mockapi.io/todoList/objects/`)
+            setData(res.data)
         } catch (error) {
             console.error("Error fetching data:", error)
         }
@@ -44,6 +54,9 @@ const NedvijInfoPage = () => {
     useEffect(() => {
         fetchData()
     }, [id])
+    useEffect(() => {
+        renderAll()
+    }, [])
     return (
         <>
 
@@ -68,7 +81,7 @@ const NedvijInfoPage = () => {
                         </div>
                     </div>
 
-                    <div className='p-5 border border-[#C9C9C9] rounded-2xl shadow max-md:hidden'>
+                    <div className='p-5 border border-[#C9C9C9] rounded-2xl shadow max-md:mt-5 max-md:m-auto'>
                         <div className='flex gap-5'>
                             <button
                                 onClick={() => setCurrency("USD")}
@@ -83,7 +96,7 @@ const NedvijInfoPage = () => {
                                 THB (฿)
                             </button>
                         </div>
-                        <p className='font-bold text-[26px] '>от $180 000</p>
+                        <p className='font-bold text-[26px] '>{currency === "THB" ? (`От ${card.price / 2}`) : (`От ${card.price}`)}</p>
                         <form ref={form} onSubmit={(e) => e.preventDefault()} className='w-[300px]'>
                             <input
                                 type="text"
