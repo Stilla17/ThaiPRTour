@@ -4,12 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import iconSelect from './../../../assets/Group 1556.png';
 import { XIcon } from 'lucide-react';
 import img2 from './../../../assets/Group 1556 (1).png';
+import { AutoComplete } from 'primereact/autocomplete';
+import { FloatLabel } from 'primereact/floatlabel';
+import { InputText } from "primereact/inputtext";
+
 const SectionNedvij = () => {
     const [page, setPage] = useState("pas1");
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [currency, setCurrency] = useState("USD");
     const [currency2, setCurrency2] = useState("all");
-
+    const [value, setValue] = useState('');
     const PageWrapper = ({ children }) => (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -63,9 +67,7 @@ const SectionNedvij = () => {
                                                 Кол-во комнат <img src={iconSelect} alt="" />
                                             </button>
                                             {activeDropdown === "rooms" && (
-                                                <div className='p-5 rounded-[15px] items-start z-10 bg-white absolute w-[100px] flex flex-col border border-[#D9D9D9] shadow mt-5'>
-                                                    {[1, 2, 3, 4, 5, 6, 8, 9].map(n => <button key={n}>{n}</button>)}
-                                                </div>
+                                                <AutoComplete className='w-20 mt-4' placeholder='Кол-во комнат' />
                                             )}
                                         </div>
 
@@ -123,10 +125,10 @@ const SectionNedvij = () => {
                                                 Укажите город/регион поиска <img src={iconSelect} alt="" />
                                             </button>
                                             {activeDropdown === "city" && (
-                                                <div className='p-5 rounded-[15px] absolute w-[250px] flex flex-col bg-white border border-[#D9D9D9] shadow mt-5'>
-                                                    <input className='border rounded-[10px] p-2 border-[#D9D9D9]' placeholder='Введите город' type="text" />
-                                                </div>
-                                            )}
+                                                <FloatLabel className='mt-5'>
+                                                    <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
+                                                    <label htmlFor="username">Укажите город/регион</label>
+                                                </FloatLabel>)}
                                         </div>
 
                                         <div>

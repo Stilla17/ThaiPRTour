@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import img from './../../../assets/Rectangle 1176.png';
+import { InputMask } from "primereact/inputmask";
 
 const SectionEmail = ({ image, text, text2 }) => {
     const form = useRef();
-
+    const [value, setValue] = useState();
     const sendEmail = (e) => {
         e.preventDefault();
-
         emailjs
             .sendForm('service_2uuntpl', 'template_la67xd2', form.current, {
                 publicKey: 'mtZZeyFYJ_dxq-5Dk',
@@ -46,12 +46,9 @@ const SectionEmail = ({ image, text, text2 }) => {
                     className="w-full px-4 py-3 rounded-md outline-none bg-white "
                 />
 
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Телефон"
-                    className="w-full px-4 py-3 rounded-md outline-none bg-white "
-                />
+                <div className="card flex justify-content-center">
+                    <InputMask value={value} onChange={(e) => setValue(e.target.value)} mask="99-999999" placeholder="99-999999" />
+                </div>
 
                 <input
                     type="email"

@@ -245,8 +245,8 @@ const Nedvij = () => {
                 <div className='flex gap-5 items-center mt-20 flex-wrap'>
                     {
                         data.map((item, index) => (
-                            <Link to={`/estate/${item.id}`}>
-                                <div key={index} className="w-[300px] border rounded-2xl p-4 mt-4">
+                            <Link key={index} to={`/estate/${item.id}`}>
+                                <div className="w-[300px] border rounded-2xl p-4 mt-4">
                                     <img src={item.img} className="rounded-xl w-full object-cover" />
                                     <h1 className="text-[16px] font-bold mt-3">{item.name}</h1>
                                     <p>{item.address}</p>
