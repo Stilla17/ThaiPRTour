@@ -12,8 +12,15 @@ import img8 from './../../assets/Frame 1000003272.png';
 
 import { main } from './NodeService.js';
 import Vhod from '../Childrens/Vhod.jsx';
+import { useTranslation } from 'react-i18next';
 
 const Nav = () => {
+
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    }
 
     const [openLang, setOpenLang] = useState(false);
     const [openLogin, setOpenLogin] = useState(false);
@@ -57,6 +64,7 @@ const Nav = () => {
                     <ul className='flex gap-[30px] text-[18px] font-medium max-[520px]:hidden'>
                         <li><Link to='/test'>Контакты</Link></li>
                         <li><Link to='/aboutUs'>О нас</Link></li>
+                        <li><Link to='/aboutUs'>{t('title')}</Link></li>
                     </ul>
                 </div>
 
@@ -65,6 +73,14 @@ const Nav = () => {
                         <img src={RussianFlagImg} alt="flag" className='w-6' />
                         <img src={Img} className={`transition-all duration-300 ${openLang ? 'rotate-180' : ''}`} alt="arrow" />
                     </div>
+
+                    <select
+                        value={i18n.resolvedLanguage || i18n.language}
+                        onChange={(event) => changeLanguage(event.target.value)} >
+                        <option value="uz">UZ</option>
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                    </select>
 
                     {openLang && (
                         <div className='absolute right-0 mt-2 w-[140px] bg-white border shadow p-3 rounded-lg z-20'>
