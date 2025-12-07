@@ -66,7 +66,7 @@ const SectionEmail = ({ image, text, text2 }) => {
                 <p>Меня интересует <span className='font-bold'>[Layan Verde Phuket]</span></p>
             </form>
 
-
+            <img className='' src={image || "https://t3.ftcdn.net/jpg/04/40/15/70/360_F_440157013_kIXrsaMEkR9mKawzYYr6NftpDT52d5kE.jpg"} alt="" />
         </div>
     );
 };

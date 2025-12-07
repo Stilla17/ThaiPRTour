@@ -57,30 +57,12 @@ const Nav = () => {
 
                     <ul className='flex gap-[30px] text-[18px] font-medium max-[520px]:hidden'>
                         <li><Link to='/test'>Контакты</Link></li>
-                        <li><Link to='/aboutUs'>О нас</Link></li>
+                        <li><Link to='/citizen'>О нас</Link></li>
+                        <li><Link to={'/estate'}>Животные</Link></li>
                     </ul>
                 </div>
 
-                <div className="relative">
-                    <div className='flex items-center gap-2 cursor-pointer' onClick={toggleLang}>
-                        <img src={RussianFlagImg} alt="flag" className='w-6' />
-                        <img src={Img} className={`transition-all duration-300 ${openLang ? 'rotate-180' : ''}`} alt="arrow" />
-                    </div>
-
-                    {openLang && (
-                        <div className='absolute right-0 mt-2 w-[140px] bg-white border shadow p-3 rounded-lg z-20'>
-                            <button className='cursor-pointer flex items-center gap-2 p-1 hover:bg-gray-100'>
-                                <img width="21" height="14" src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png' />
-                                English
-                            </button>
-
-                            <button className='cursor-pointer flex items-center gap-2 p-1 hover:bg-gray-100'>
-                                <img width="21" height="14" src='https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Uzbekistan.png' />
-                                O‘zbek
-                            </button>
-                        </div>
-                    )}
-                </div>
+                
 
                 <div className='flex items-center '>
                     <button onClick={toggleLogin} className='max-md:hidden ml-4 px-4 py-2 border rounded-lg'>Войти</button>
@@ -96,7 +78,7 @@ const Nav = () => {
 
             </div>
 
-            <div className={openNav ? 'flex justify-between p-[15px] bg-[#F7F4F0] max-md:hidden' : 'hidden'}>
+            <div className={openNav ? 'flex justify-between  p-[15px] bg-[#F7F4F0] max-md:hidden' : 'hidden'}>
                 {
                     main.map((item, index) => (
                         <ul key={index}>
@@ -119,7 +101,7 @@ const Nav = () => {
                                 <img src={item.img} alt="" />
                                 <div
                                     onClick={() => toggle(i)}
-                                    className="flex justify-between items-center w-full"
+                                    className="flex justify-between items-center w-[1300px]"
                                 >
                                     <div className="flex items-center gap-3">
                                         <span className="text-3xl">{item.icon}</span>

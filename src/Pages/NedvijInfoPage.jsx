@@ -15,7 +15,7 @@ const NedvijInfoPage = () => {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get(`https://68e211a48943bf6bb3c58500.mockapi.io/todoList/objects/${id}`)
+            const res = await axios.get(`https://68d8c81290a75154f0d8ad21.mockapi.io/ee/f/${id}`)
             setCard(res.data)
         } catch (error) {
             console.error("Error fetching data:", error)
@@ -23,7 +23,7 @@ const NedvijInfoPage = () => {
     }
     const renderAll = async () => {
         try {
-            const res = await axios.get(`https://68e211a48943bf6bb3c58500.mockapi.io/todoList/objects/`)
+            const res = await axios.get(`https://68d8c81290a75154f0d8ad21.mockapi.io/ee/f/${id}`)
             setData(res.data)
         } catch (error) {
             console.error("Error fetching data:", error)
@@ -96,7 +96,7 @@ const NedvijInfoPage = () => {
                                 THB (฿)
                             </button>
                         </div>
-                        <p className='font-bold text-[26px] '>{currency === "THB" ? (`От ${card.price / 2}`) : (`От ${card.price}`)}</p>
+                        <p className='font-bold text-[26px] '>{currency === "THB" ? (`От ${card.price / 2}$`) : (`От ${card.price}$`)}</p>
                         <form ref={form} onSubmit={(e) => e.preventDefault()} className='w-[300px]'>
                             <input
                                 type="text"

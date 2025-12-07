@@ -7,23 +7,35 @@ import logo2 from '../../assets/Component 11 (2).png';
 import logo3 from '../../assets/Component 11 (3).png';
 import logo4 from '../../assets/Component 11 (4).png';
 
+
+
 let main = [
-  { title: 'О нас' },
-  { title: 'Гражданство', links: ['Гражданство', 'Резиденство', 'Бизнес', 'Визы'] },
+  {
+    title: 'О компании',
+    links: ['О нас', 'Наши услуги', 'Контакты', 'FAQ'],
+  },
+  {
+    title: 'Гражданство и ВНЖ',
+    links: ['Гражданство через инвестиции', 'Вид на жительство', 'Паспорт второй страны', 'Юридическое сопровождение'],
+  },
   {
     title: 'Недвижимость',
-    links: ['Купить', 'Снять', 'Коммерческая', 'Юридическая помощь', 'Предложить объект'],
-  },
-  { title: 'Индекс паспорта', links: ['Рейтинг паспортов', 'Безвизовые страны', 'Виза', 'Сравнение'] },
-  {
-    title: 'Авто',
-    links: ['Купить / продать', 'Купить / продать', 'Аренда', 'Сотрудничество'],
+    links: ['Купить недвижимость', 'Аренда жилья', 'Коммерческая недвижимость', 'Инвестиции в недвижимость', 'Юридическая помощь'],
   },
   {
-    title: 'Консъерж - сервис',
-    links: ['Аренда яхт', 'Аренда вертолета', 'Аренда vip авто', '24/7 обслуживание гостей'],
+    title: 'Индекс паспорта',
+    links: ['Рейтинг паспортов', 'Безвизовые страны', 'Страны с визой по прибытию', 'Сравнение паспортов'],
+  },
+  {
+    title: 'Авто услуги',
+    links: ['Покупка авто', 'Продажа авто', 'Аренда авто', 'Перегон авто'],
+  },
+  {
+    title: 'Консьерж-сервис',
+    links: ['Аренда яхт', 'Аренда вертолёта', 'Аренда VIP авто', 'Обслуживание гостей 24/7'],
   },
 ];
+
 
 const FooterList = () => {
   return (
@@ -33,7 +45,7 @@ const FooterList = () => {
       </div>
 
       <div className="px-4 py-10 bg-white">
-        <div className="flex flex-col md:flex-row  justify-center md:justify-start gap-10 md:gap-20 lg:gap-[100px]">
+        <div className="flex  md:flex-row justify-center md:justify-start gap-[40px]">
 
           <div className="text-center md:text-left shrink-0">
             <img src={logo} alt="logo" className="mx-auto md:mx-0" />
@@ -58,7 +70,7 @@ const FooterList = () => {
           </div>
 
           {main.map((item, index) => (
-            <ul key={index} className="text-center md:text-left w-full md:w-auto">
+            <ul key={index} className="text-center md:text-left  md:w-auto">
               <li className="font-bold mb-2">{item.title}</li>
 
               {(item.links ?? []).map((link, linkIndex) => (

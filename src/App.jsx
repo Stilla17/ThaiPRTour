@@ -23,7 +23,6 @@ function App() {
         <Route path="estate/:id" element={<NedvijInfoPage />} />
         <Route path="register" element={<Register />} />
       </Route>
-
       <Route
         path="/admin"
         element={

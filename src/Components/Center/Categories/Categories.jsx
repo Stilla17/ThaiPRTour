@@ -1,19 +1,15 @@
 import React from "react";
-import CategoryItem from "../CategoryItem/CategoryItem";
+import CategoryItem from './../CategoryItem/CategoryItem.jsx';
 
-import pass from '../../../assets/Rectangle 1162.png';
-import realestate from '../../../assets/Rectangle 1162 (1).png';
-import passport from '../../../assets/Rectangle 1162 (2).png';
-import poster from '../../../assets/Rectangle 1161.png';
-import car from '../../../assets/Rectangle 1162 (4).png';
-import concierge from '../../../assets/Rectangle 1162 (5).png';
+
+
 
 const categories = [
-  { name: "Гражданство", color: "blue", img: pass },
-  { name: "Недвижимость", color: "yellow", img: realestate },
-  { name: "Индекс паспорта", color: "lightblue", img: passport },
-  { name: "Автослуги", color: "orange", img: car },
-  { name: "Консьерж-сервис", color: "green", img: concierge },
+  { name: "Купить животное", color: "#4da3ff", img: "https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D" },
+  { name: "Продать животное", color: "#ffd23f", img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqxlDun0EWp8OiGTXoelcBkuM7BiifKAflkw&s' },
+  { name: "Аренда животных", color: "#7ed4ff", img: 'https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D'},
+  { name: "Услуги для животных", color: "#ff8c42",  img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqxlDun0EWp8OiGTXoelcBkuM7BiifKAflkw&s'},
+  { name: "Пропавшие животные", color: "#59c96f",  img: 'https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D'},
 ];
 
 const Categories = () => {

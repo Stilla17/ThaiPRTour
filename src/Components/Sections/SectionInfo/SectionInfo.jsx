@@ -9,6 +9,7 @@ const SectionInfo = () => {
     };
     return (
         <section className='mt-[100px]'>
+            <h1 className='text-[36px] font-bold'>О нас</h1>
             {
                 main.map((item, index) => (
                     <div key={index} className='max-w-[1300px] mx-auto px-5 '>

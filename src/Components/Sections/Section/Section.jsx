@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { animate } from  'framer-motion';
+import { animate } from 'framer-motion';
 import { motion, AnimatePresence } from "framer-motion";
 import './section.css';
 
@@ -23,7 +23,7 @@ function Section() {
   );
 
   const motionVariants = () => {
-    animate(0, 20, {
+    animate(0, 200, {
       duration: 1.5,
       ease: 'easeOut',
       onUpdate: (value) => {
@@ -31,7 +31,7 @@ function Section() {
       },
     });
 
-    animate(0, 100, {
+    animate(0, 350, {
       duration: 1.5,
       ease: 'easeOut',
       onUpdate: (value) => {
@@ -39,7 +39,7 @@ function Section() {
       },
     });
 
-    animate(0, 400, {
+    animate(0, 1200, {
       duration: 1.5,
       ease: 'easeOut',
       onUpdate: (value) => {
@@ -47,20 +47,18 @@ function Section() {
       },
     });
 
-    animate(0, 12, {
+    animate(0, 80, {
       duration: 1.5,
       ease: 'easeOut',
       onUpdate: (value) => {
         numberRef3.current.textContent = Math.round(value) + '+';
       },
     });
-  }
+  };
 
   useEffect(() => {
     motionVariants();
   }, []);
-
-
 
   return (
     <>
@@ -68,26 +66,26 @@ function Section() {
         <div className="countener">
           <div className="why-we">
             <div className="fle">
-              <p className="wh">Почему Thai.PRO</p>
+              <p className="wh">Почему Animal.PRO</p>
 
               <div className="q1">
                 <p className="number" ref={numberRef}>0+</p>
-                <p className="number-p">Оформлено гражданств</p>
+                <p className="number-p">Продано животных</p>
               </div>
 
               <div className="q1">
                 <p className="number" ref={numberRef1}>0+</p>
-                <p className="number-p">Помогли открыть бизнес</p>
+                <p className="number-p">Оказано услуг по уходу</p>
               </div>
 
               <div className="q1">
                 <p className="number" ref={numberRef2}>0+</p>
-                <p className="number-p">Помогли в выдаче виз</p>
+                <p className="number-p">Найдено пропавших животных</p>
               </div>
 
               <div className="q1">
                 <p className="number" ref={numberRef3}>0+</p>
-                <p className="number-p">Оформили недвижимость</p>
+                <p className="number-p">Животных сдано в аренду</p>
               </div>
             </div>
           </div>
@@ -99,13 +97,13 @@ function Section() {
           <div className="about">
             <div className="about-inner">
 
-              <div className='aas' >
-                <button onClick={() => setPage("pas1")}>гражданств ЕС</button>
-                <button onClick={() => setPage("pas2")}>Карта поляка</button>
-                <button onClick={() => setPage("pas3")}>Паспорт  ЕС</button>
-                <button onClick={() => setPage("pas4")}>ВНЖ</button>
-                <button onClick={() => setPage("pas5")}>ПМЖ</button>
-                <button onClick={() => setPage("pas6")}>Бизнес</button>
+              <div className='aas'>
+                <button onClick={() => setPage("pas1")}>Купить животное</button>
+                <button onClick={() => setPage("pas2")}>Продать животное</button>
+                <button onClick={() => setPage("pas3")}>Аренда животных</button>
+                <button onClick={() => setPage("pas4")}>Услуги</button>
+                <button onClick={() => setPage("pas5")}>Пропавшие животные</button>
+                <button onClick={() => setPage("pas6")}>Ветеринария</button>
               </div>
 
               <div className="page-wrapper">
@@ -113,35 +111,43 @@ function Section() {
 
                   {page === "pas1" && (
                     <PageWrapper key="pa1">
-                      <h1>гражданств ЕС</h1>
+                      <h1>Покупка животных</h1>
+                      <p>Вы можете купить породистых, домашних и экзотических животных.</p>
                     </PageWrapper>
                   )}
 
                   {page === "pas2" && (
                     <PageWrapper key="pa2">
-                      <h1>дльв</h1>
+                      <h1>Продажа животных</h1>
+                      <p>Разместите объявление и найдите покупателей быстро.</p>
                     </PageWrapper>
                   )}
 
                   {page === "pas3" && (
                     <PageWrapper key="pa3">
-                      <h1>Паспорт  ЕС</h1>
+                      <h1>Аренда животных</h1>
+                      <p>Аренда для мероприятий, фотосессий и обучения.</p>
                     </PageWrapper>
                   )}
 
                   {page === "pas4" && (
                     <PageWrapper key="pa4">
-                      <h1>двц</h1>
+                      <h1>Услуги для животных</h1>
+                      <p>Груминг, передержка, обучение, перевозка и многое другое.</p>
                     </PageWrapper>
                   )}
+
                   {page === "pas5" && (
                     <PageWrapper key="pa5">
-                      <h1>двц</h1>
+                      <h1>Пропавшие животные</h1>
+                      <p>Раздел для поиска и возврата потерянных питомцев.</p>
                     </PageWrapper>
                   )}
+
                   {page === "pas6" && (
                     <PageWrapper key="pa6">
-                      <h1>двц</h1>
+                      <h1>Ветеринария</h1>
+                      <p>Онлайн консультации, помощь и проверка здоровья животных.</p>
                     </PageWrapper>
                   )}
 
@@ -152,7 +158,6 @@ function Section() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
